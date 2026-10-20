@@ -1,0 +1,106 @@
+{
+  "split_summary": [
+    {
+      "split": "test",
+      "orders": 206209,
+      "users": 206209,
+      "positive_rate": 0.290622620739153
+    },
+    {
+      "split": "train",
+      "orders": 2727456,
+      "users": 197523,
+      "positive_rate": 0.5409183502868607
+    },
+    {
+      "split": "validation",
+      "orders": 206209,
+      "users": 206209,
+      "positive_rate": 0.30806608828906595
+    }
+  ],
+  "features": [
+    "prior_order_number",
+    "prior_dow",
+    "prior_hour",
+    "prior_gap",
+    "prior_basket_size",
+    "prior_reorder_fraction",
+    "prior_aisle_count",
+    "prior_department_count",
+    "prior_produce_fraction",
+    "prior_dairy_fraction",
+    "historical_mean_gap",
+    "historical_std_gap",
+    "historical_weekly_rate",
+    "historical_mean_basket",
+    "historical_mean_reorder_fraction",
+    "recent_mean_gap",
+    "recent_mean_basket"
+  ],
+  "parameters": {
+    "tree_method": "hist",
+    "device": "cpu",
+    "n_jobs": 4,
+    "n_estimators": 1000,
+    "learning_rate": 0.05,
+    "max_depth": 5,
+    "min_child_weight": 50,
+    "subsample": 0.8,
+    "colsample_bytree": 0.9,
+    "reg_lambda": 10,
+    "objective": "binary:logistic",
+    "eval_metric": "logloss",
+    "early_stopping_rounds": 50,
+    "random_state": 42
+  },
+  "best_iteration": 384,
+  "validation": {
+    "roc_auc": 0.7577613565852872,
+    "average_precision": 0.620994796689265,
+    "log_loss": 0.5386559963226318,
+    "brier_score": 0.17939798533916473,
+    "accuracy_at_0_5": 0.7406466255110107
+  },
+  "test": {
+    "roc_auc": 0.7710304033640611,
+    "average_precision": 0.6243055023602665,
+    "log_loss": 0.5233052968978882,
+    "brier_score": 0.1727832555770874,
+    "accuracy_at_0_5": 0.7535461594789752
+  },
+  "test_constant_baseline": {
+    "roc_auc": 0.5,
+    "average_precision": 0.290622620739153,
+    "log_loss": 0.7308533873866937,
+    "brier_score": 0.26880906528367865,
+    "accuracy_at_0_5": 0.290622620739153
+  },
+  "test_history_baseline": {
+    "roc_auc": 0.7395790029709434,
+    "average_precision": 0.5237146120955516,
+    "log_loss": 1.045649528503418,
+    "brier_score": 0.18956226110458374,
+    "accuracy_at_0_5": 0.7171655941302271
+  },
+  "feature_importance": {
+    "historical_weekly_rate": 0.5109791159629822,
+    "historical_mean_gap": 0.22908534109592438,
+    "recent_mean_gap": 0.10754043608903885,
+    "prior_order_number": 0.04387339949607849,
+    "prior_hour": 0.02034180425107479,
+    "prior_gap": 0.018768690526485443,
+    "historical_mean_reorder_fraction": 0.01506223063915968,
+    "historical_std_gap": 0.011159753426909447,
+    "prior_reorder_fraction": 0.00819324143230915,
+    "prior_dow": 0.007975460961461067,
+    "prior_produce_fraction": 0.005558462347835302,
+    "recent_mean_basket": 0.004947621375322342,
+    "prior_aisle_count": 0.004757509101182222,
+    "prior_department_count": 0.004507463425397873,
+    "historical_mean_basket": 0.0027665155939757824,
+    "prior_basket_size": 0.002334171673282981,
+    "prior_dairy_fraction": 0.0021487781777977943
+  },
+  "elapsed_seconds": 28.408302783966064
+}

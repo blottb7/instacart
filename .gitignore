@@ -1,0 +1,25 @@
+# Local datasets and generated data
+data/
+*.csv
+*.parquet
+
+# Python and Jupyter environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Local credentials and machine settings
+credentials.json
+.env
+.env.*
+.DS_Store
+
+# Generated model artifacts and logs
+*.ubj
+*.pkl
+*.joblib
+*.log
+codex-xgboost-experiment/models/weekly_reorder/tmp/
